@@ -12,7 +12,7 @@ export default function ModalPopup({ header, isOpen, children, subTitle, onHandl
         X
       </div>
 
-      <div className={`modale-main ${scroll}`}>
+      <div className={`modale-main ${scroll} modale-border`}>
         <div className="modale-header">
           <h3>{header}</h3>
           <p>{subTitle}</p>

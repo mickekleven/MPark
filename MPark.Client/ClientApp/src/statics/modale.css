@@ -22,6 +22,10 @@
 }
 
 
+.modale-border {
+    border: 4px solid #fff;
+}
+
 .modale-backdrop {
     position: fixed;
     top: 0;
