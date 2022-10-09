@@ -1,0 +1,88 @@
+@keyframes kf-fadein {
+
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* modal */
+
+.modale-close-x {
+  position: absolute;
+  right: 3rem;
+  top: 3rem; 
+
+  color: #fff;
+  font-size:70px;
+  font-weight: 600; ;
+
+}
+
+
+.modale-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
+  
+  .modale-header, .modale-body, .modale-footer {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .modale-header {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  .modale-body, .modale-footer {
+    background: var(--info);
+    color: var (--primary);
+  }
+
+
+  .modale-footer {
+    margin-bottom: 10px;
+  }
+
+  .modale-main {
+    max-width: 40rem;
+    max-height: 40rem;
+    width: 95%;
+    background: #fff;
+    margin: 7rem auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px #808080;
+  }
+  
+
+.modale-scroll{
+    overflow-y:scroll;
+    
+}
+
+  .btn {
+    margin-left: 4px;
+  }
+  
+  .anim-from-top {
+    background-color: rgba(0, 0, 0, 0.5);
+    animation-duration: 400ms;
+    animation-name: kf-from-top;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes kf-from-top {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }

@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
-import { Layout } from './components/Layout';
-import './custom.css';
+import logo from "../src/logo.svg";
+import "./App.css";
+import "./components/navbar";
+import Navbar from "./components/navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./statics/modale.css";
+import { StateContext } from "./helpers/context";
+import Home from "./components/home";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render() {
+function App() {
     return (
-      <Layout>
-        <Routes>
-          {AppRoutes.map((route, index) => {
-            const { element, ...rest } = route;
-            return <Route key={index} {...rest} element={element} />;
-          })}
-        </Routes>
-      </Layout>
+        <div className="App">
+            <Navbar></Navbar>
+            <Routes>
+                <Route path="/" element={<Home />}></Route>
+            </Routes>
+        </div>
     );
-  }
 }
+
+export default App;
