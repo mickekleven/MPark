@@ -44,7 +44,31 @@ export default function Home() {
       );
     },
     [entity]
-  );
+    );
+
+
+    const onShowModalDelete = () => {
+        if (machDelete.isDelete) {
+            return (
+                <ModalPopup isOpen={machDelete.isDelete} onHandleModal={onHandleModal} header="Delete">
+                    <div>
+                        <h1>Delete {machDelete.name} ?</h1>
+                        <button className="btn btn-danger" onClick={() => onMachineDelete(machDelete.id)}>Yes</button>
+                        <button className="btn btn-primary"  onClick={() => setMachDelete(false)}>No</button>
+                    </div>
+                </ModalPopup>
+            );
+           
+        }
+    };
+
+    const onMachineDelete = async (id) => {
+        const _collection = await deleteMachine(id);
+        setCollection(_collection)
+        setMachDelete({id:"", name:"", isDelete: false})
+
+    }
+
 
   const onShowForm = () => {
     if (showForm) {
@@ -202,7 +226,7 @@ export default function Home() {
                         <span className={`me-2 ${val.online ? "text-c-primary" : "text-muted"} `}>
                           {<FontAwesomeIcon icon={faMessage} />}
                         </span>
-                        <span onClick={() => onDelete(val.id, true)} className="text-danger">
+                              <span onClick={() => setMachDelete({ id: val.id, name: val.name, isDelete: true})} className="text-danger">
                           {<FontAwesomeIcon icon={faTrash} />}
                         </span>
                       </td>
@@ -210,7 +234,10 @@ export default function Home() {
                   );
                 })}
               </tbody>
-            </table>
+             </table>
+
+           {onShowModalDelete(machDelete)}
+
           </div>
         </div>
       </div>
