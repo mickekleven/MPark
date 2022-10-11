@@ -11,6 +11,7 @@ pool:
 
 variables: 
     directory: 'MPark.Client/ClientApp'
+    directory2: 'MPark.Client'
 
 steps:
 - task: NodeTool@0
@@ -26,3 +27,4 @@ steps:
 - script: |
     npm run build
   displayName: 'npm build'
+  workingDirectory: $(directory2)
