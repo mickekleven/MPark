@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables: 
-    directory: 'MPark.Client'
+    directory: 'MPark.Client/ClientApp'
 
 steps:
 - task: NodeTool@0
