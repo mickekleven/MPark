@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import ReactDOM from "react-dom";
 
 export default function ModalPopup({ header, isOpen, children, subTitle, onHandleModal, isScrolling = true }) {
+
   if (!isOpen) return null;
 
   const scroll = isScrolling ? "modale-scroll" : "";
