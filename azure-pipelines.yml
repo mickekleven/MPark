@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables: 
+    path: '/MPark.Client/package.json'
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -16,9 +19,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
+  npm install $(path)
   displayName: 'npm install'
 
 - script: |
-    npm run build
+  npm run build
   displayName: 'npm build'
