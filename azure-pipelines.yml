@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables: 
-    path: '/MPark.Client/package.json'
+    path: 'MPark.Client/package.json'
 
 steps:
 - task: NodeTool@0
