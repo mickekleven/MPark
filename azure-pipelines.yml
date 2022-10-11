@@ -21,10 +21,8 @@ steps:
 
 - script: |
     npm install
+    npm run build
   displayName: 'npm install'
   workingDirectory: $(directory)
 
-- script: |
-    npm run build
-  displayName: 'npm build'
-  workingDirectory: $(directory2)
+
