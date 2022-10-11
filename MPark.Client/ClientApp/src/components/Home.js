@@ -13,21 +13,18 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCoffee,
   faEdit,
   faDashboard,
   faMessage,
-  faRecycle,
   faTrash,
-  faMarsStrokeH,
-} from "@fortawesome/free-solid-svg-icons";
+  } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
   const [collection, setCollection] = useState([]);
   const [entity, setEntity] = useState(machine);
   const [header, setHeader] = useState("");
-  const [subTitle, setSubTitle] = useState();
+    const [machDelete, setMachDelete] = useState({id: "", name: "", isDelete : false});
 
   const onHandleModal = () => {
     setShowForm(!showForm);
