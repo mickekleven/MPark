@@ -1,4 +1,4 @@
-export const API_BASE = "http://localhost:7172";
+export const API_BASE = "https://mparkfuncapp.azurewebsites.net";
 
 export const apiRoutes = {
   api_base: `${API_BASE}/api/machinepark`,
